@@ -53,8 +53,8 @@ function createStars() {
 }
 createStars();
 
-const loader = new THREE.TextureLoader();
 
+const loader = new THREE.TextureLoader();
 const sun = new THREE.Mesh(
   new THREE.SphereGeometry(16, 32, 32),
   new THREE.MeshStandardMaterial({ map: loader.load("/sun.jpg") }),
@@ -127,6 +127,7 @@ planetData.forEach((p) => {
   planets.push(mesh);
   planetSpeeds[p.name] = p.speed;
 
+
   // Orbit trail
   const orbitGeom = new THREE.BufferGeometry().setFromPoints(
     Array.from(
@@ -146,6 +147,7 @@ planetData.forEach((p) => {
   orbitMeshes.push(orbitLine);
   scene.add(orbitLine);
 
+
   // Saturn ring
   if (p.hasRing) {
     const rg = new THREE.RingGeometry(p.size + 1, p.size + 3, 64);
@@ -158,12 +160,14 @@ planetData.forEach((p) => {
     mesh.add(rmesh);
   }
 
+
   // Label
   const label = document.createElement("div");
   label.className = "planet-label";
   label.textContent = p.name;
   document.body.appendChild(label);
   planetLabels.push({ mesh, label });
+
 
   // Sidebar info
   const entry = document.createElement("div");
@@ -178,24 +182,29 @@ planetData.forEach((p) => {
   dataDiv.appendChild(entry);
 });
 
+
 // Orbit toggle
 document.getElementById("toggleOrbits").onchange = (e) =>
   orbitMeshes.forEach((l) => (l.visible = e.target.checked));
 
+
 // Sidebar toggle
 document.getElementById("toggleSidebar").onclick = () =>
   sidebar.classList.toggle("closed");
+
 
 // Pause/Resume
 let paused = false;
 document.getElementById("pauseBtn").onclick = () => (paused = true);
 document.getElementById("resumeBtn").onclick = () => (paused = false);
 
+
 // Speed sliders
 slidersDiv.addEventListener("input", (e) => {
   const n = e.target.dataset.name;
   if (n) planetSpeeds[n] = parseFloat(e.target.value);
 });
+
 
 // Tooltip on hover
 const ray = new THREE.Raycaster(),
@@ -212,6 +221,7 @@ renderer.domElement.addEventListener("mousemove", (e) => {
     tooltip.classList.remove("hidden");
   } else tooltip.classList.add("hidden");
 });
+
 
 // Animate
 function animate() {
@@ -232,9 +242,10 @@ function animate() {
   });
   controls.update();
   renderer.render(scene, camera);
-}
-
+} 
 animate();
+
+
 
 // Resize
 window.addEventListener("resize", () => {
