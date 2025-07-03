@@ -140,9 +140,11 @@ label {
 
 .planet-label {
   position: absolute;
-  color: white;
-  font-size: 14px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.8rem;
   pointer-events: none;
-  white-space: nowrap;
+  text-shadow: 0 0 5px #000;
+  z-index: 5;
   transform: translate(-50%, -50%);
 }
