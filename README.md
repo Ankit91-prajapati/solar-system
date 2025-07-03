@@ -1,6 +1,7 @@
 🛠️ How to Run Locally
+
 1. Clone the repository
-git clone https://github.com/GupaShubham-11/SolarSystem.git
+git clone https://github.com/Ankit91-prajapati/solar-system.git
 cd solar-system
 
 2. Install dependencies
