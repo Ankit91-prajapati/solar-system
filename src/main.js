@@ -44,7 +44,7 @@ function createStars() {
       new THREE.PointsMaterial({
         color: 0xffffff,
         side:5,
-        sizeAttennuation: true,
+        sizeAttenuation: true,
         
       })
     )
