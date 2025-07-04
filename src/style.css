@@ -139,6 +139,7 @@ label {
 }
 
 .planet-label {
+  display: none;
   position: absolute;
   color: var(--accent);
   font-weight: bold;
@@ -147,4 +148,11 @@ label {
   text-shadow: 0 0 5px #000;
   z-index: 5;
   transform: translate(-50%, -50%);
+}
+
+/* Hide on < 359px and > 412px */
+@media (max-width: 359px), (min-width: 413px) {
+  .planet-label {
+    display: block;
+  }
 }
