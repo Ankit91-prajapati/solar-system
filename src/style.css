@@ -151,7 +151,7 @@ label {
 }
 
 /* Hide on < 359px and > 412px */
-@media (max-width: 359px), (min-width: 413px) {
+@media (max-width: 767px), (min-width: 769px) {
   .planet-label {
     display: block;
   }
