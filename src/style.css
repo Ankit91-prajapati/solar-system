@@ -139,7 +139,7 @@ label {
 }
 
 .planet-label {
-  display: none;
+  display:block;
   position: absolute;
   color: var(--accent);
   font-weight: bold;
